@@ -9,11 +9,15 @@ import styles from "./Chat.module.css";
 // Create a Supabase client for interacting with the Supabase database
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
 /*
-Function: Chat
+REACT COMPONENTS
+*/
+
+/*
+Component Function: Chat
 Description: Chat component to display chat messages and allow users to send chat messages to a chat group
 */
 export default function Chat(props) {
@@ -24,6 +28,10 @@ export default function Chat(props) {
   const [messageOutput, setMessageOutput] = useState("");
   const [chatMessage, setChatMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  /*
+  EVENT HANDLERS
+  */
 
   /*
   Function: Handle Form Submission
@@ -42,6 +50,10 @@ export default function Chat(props) {
   }
 
   /*
+  HELPER FUNCTIONS
+  */
+
+  /*
   Function: Format Chat Message Helper Function
   Description: Function to format chat messages before they are displayed in the messageOutput textarea
   */
@@ -50,8 +62,14 @@ export default function Chat(props) {
   }
 
   /*
+  REACT HOOKS
+  */
+
+  /*
   Function: Fetch Data useEffect hook on component mount
-  Description: useEffect hook to fetch data from the chats table on component mount and populate the messageOutput state with the fetched data
+  Description:
+    useEffect hook to fetch data from the chats table on component mount and populate the messageOutput state with the fetched data.
+    So, it populates the messageOutput textarea with the relevant chat messages when the Chat component initially loads (a.k.a. mounts).
   */
   useEffect(() => {
     // Function to fetch data from the Supabase database - chats table
@@ -61,7 +79,7 @@ export default function Chat(props) {
         `*,
           profiles (
             display_name
-          )`,
+          )`
       );
       /* 
       .eq("location", "shire")
@@ -76,9 +94,9 @@ export default function Chat(props) {
           chats
             .map(
               (chat) =>
-                `${formatChatMessage(chat.profiles.display_name, chat.created_at, chat.chat_message)}`,
+                `${formatChatMessage(chat.profiles.display_name, chat.created_at, chat.chat_message)}`
             )
-            .join("\n\n"),
+            .join("\n\n")
         );
       }
     };
@@ -87,54 +105,10 @@ export default function Chat(props) {
   }, []);
 
   /*
-  Function: Real-time Subscription useEffect hook
-  Description:
-  useEffect hook to set up real-time subscription to the chats table and populate the messageOutput state with new messages
-  So, it listens for new chat messages inserted into the chats table and updates the messageOutput state with the new chat message and the user's display_name
-  */
-  useEffect(() => {
-    const channels = supabase
-      .channel("custom-insert-channel")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "chats" },
-        async (payload) => {
-          // Extract the user_id from the inserted chat row
-          const userId = payload.new.user_id;
-
-          // Query the profiles table to get the display_name for the user_id
-          const { data, error } = await supabase
-            .from("profiles")
-            .select("display_name")
-            .eq("user_id", userId)
-            .single(); // Assuming user_id is unique
-
-          if (error) {
-            console.error("Error fetching display_name:", error);
-          } else {
-            const displayName = data.display_name;
-
-            // Update the messageOutput state with the new chat message and the user's display_name
-            setMessageOutput(
-              (prevMessageOutput) =>
-                `${prevMessageOutput}\n\n${formatChatMessage(displayName, payload.new.created_at, payload.new.chat_message)}`,
-            );
-          }
-        },
-      )
-      .subscribe();
-
-    // Cleanup subscription on component unmount
-    return () => {
-      supabase.removeChannel(channels);
-    };
-  }, []);
-
-  /*
   Function: Form Submission useEffect hook
   Description:
-  useEffect hook that runs when the form is submitted and isSubmitted state is set to true.
-  So, it inserts the new chat message into the chats table and resets the isSubmitted state.
+    useEffect hook that runs when the form is submitted and isSubmitted state is set to true.
+    So, it inserts the new chat message into the chats table and resets the isSubmitted state.
   */
   useEffect(() => {
     if (isSubmitted) {
@@ -173,6 +147,50 @@ export default function Chat(props) {
   }, [isSubmitted, userId, location, interest, chatMessage]);
 
   /*
+  Function: Real-time Subscription useEffect hook
+  Description:
+    useEffect hook to set up real-time subscription to the chats table and populate the messageOutput state with new messages.
+    So, it listens for new chat messages inserted into the chats table and updates the messageOutput state with the new chat message and the user's display_name.
+  */
+  useEffect(() => {
+    const channels = supabase
+      .channel("custom-insert-channel")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "chats" },
+        async (payload) => {
+          // Extract the user_id from the inserted chat row
+          const userId = payload.new.user_id;
+
+          // Query the profiles table to get the display_name for the user_id
+          const { data, error } = await supabase
+            .from("profiles")
+            .select("display_name")
+            .eq("user_id", userId)
+            .single(); // Assuming user_id is unique
+
+          if (error) {
+            console.error("Error fetching display_name:", error);
+          } else {
+            const displayName = data.display_name;
+
+            // Update the messageOutput state with the new chat message and the user's display_name
+            setMessageOutput(
+              (prevMessageOutput) =>
+                `${prevMessageOutput}\n\n${formatChatMessage(displayName, payload.new.created_at, payload.new.chat_message)}`
+            );
+          }
+        }
+      )
+      .subscribe();
+
+    // Cleanup subscription on component unmount
+    return () => {
+      supabase.removeChannel(channels);
+    };
+  }, []);
+
+  /*
   Function: Scroll to the bottom of the messageOutput useEffect hook
   Description: useEffect hook to scroll the messageOutput textarea to the bottom when new messages are added, either by fetching or submitting new messages
   */
@@ -182,8 +200,9 @@ export default function Chat(props) {
   }, [messageOutput]);
 
   /*
-  Return: Chat component JSX
+  JSX
   */
+
   return (
     <div className={styles.chatContainer}>
       <section className={styles.chatSection}>
