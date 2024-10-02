@@ -13,7 +13,11 @@ const supabase = createClient(
 );
 
 /*
-Function: Chat
+REACT COMPONENTS
+*/
+
+/*
+Component Function: Chat
 Description: Chat component to display chat messages and allow users to send chat messages to a chat group
 */
 export default function Chat(props) {
@@ -24,6 +28,10 @@ export default function Chat(props) {
   const [messageOutput, setMessageOutput] = useState("");
   const [chatMessage, setChatMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  /*
+  EVENT HANDLERS
+  */
 
   /*
   Function: Handle Form Submission
@@ -42,6 +50,10 @@ export default function Chat(props) {
   }
 
   /*
+  HELPER FUNCTIONS
+  */
+
+  /*
   Function: Format Chat Message Helper Function
   Description: Function to format chat messages before they are displayed in the messageOutput textarea
   */
@@ -50,8 +62,14 @@ export default function Chat(props) {
   }
 
   /*
+  REACT HOOKS
+  */
+
+  /*
   Function: Fetch Data useEffect hook on component mount
-  Description: useEffect hook to fetch data from the chats table on component mount and populate the messageOutput state with the fetched data
+  Description:
+    useEffect hook to fetch data from the chats table on component mount and populate the messageOutput state with the fetched data.
+    So, it populates the messageOutput textarea with the relevant chat messages when the Chat component initially loads (a.k.a. mounts).
   */
   useEffect(() => {
     // Function to fetch data from the Supabase database - chats table
@@ -87,10 +105,52 @@ export default function Chat(props) {
   }, []);
 
   /*
+  Function: Form Submission useEffect hook
+  Description:
+    useEffect hook that runs when the form is submitted and isSubmitted state is set to true.
+    So, it inserts the new chat message into the chats table and resets the isSubmitted state.
+  */
+  useEffect(() => {
+    if (isSubmitted) {
+      // Perform actions when the form is submitted
+
+      // Function to insert new chat messages into the Supabase database - chats table.
+      const insertData = async () => {
+        // let { data: chats, error } = await supabase.from("chats").select("*"); // Original GET test code as copied from our Supabase API docs
+        const { error } = await supabase
+          .from("chats")
+          .insert([
+            {
+              user_id: userId,
+              location: location,
+              interest: interest,
+              chat_message: chatMessage,
+            },
+          ])
+          .select();
+
+        if (error) {
+          console.error("Error fetching chats:", error);
+        }
+      };
+
+      // Call the insertData function to insert the new chat message into the database
+      insertData();
+
+      // Reset the isSubmitted state
+      setIsSubmitted(false);
+
+      // Clear the chat message input field after the form is submitted
+      setChatMessage("");
+      document.getElementById("chatMessage").value = "";
+    }
+  }, [isSubmitted, userId, location, interest, chatMessage]);
+
+  /*
   Function: Real-time Subscription useEffect hook
   Description:
-  useEffect hook to set up real-time subscription to the chats table and populate the messageOutput state with new messages
-  So, it listens for new chat messages inserted into the chats table and updates the messageOutput state with the new chat message and the user's display_name
+    useEffect hook to set up real-time subscription to the chats table and populate the messageOutput state with new messages.
+    So, it listens for new chat messages inserted into the chats table and updates the messageOutput state with the new chat message and the user's display_name.
   */
   useEffect(() => {
     const channels = supabase
@@ -131,48 +191,6 @@ export default function Chat(props) {
   }, []);
 
   /*
-  Function: Form Submission useEffect hook
-  Description:
-  useEffect hook that runs when the form is submitted and isSubmitted state is set to true.
-  So, it inserts the new chat message into the chats table and resets the isSubmitted state.
-  */
-  useEffect(() => {
-    if (isSubmitted) {
-      // Perform actions when the form is submitted
-
-      // Function to insert new chat messages into the Supabase database - chats table.
-      const insertData = async () => {
-        // let { data: chats, error } = await supabase.from("chats").select("*"); // Original GET test code as copied from our Supabase API docs
-        const { error } = await supabase
-          .from("chats")
-          .insert([
-            {
-              user_id: userId,
-              location: location,
-              interest: interest,
-              chat_message: chatMessage,
-            },
-          ])
-          .select();
-
-        if (error) {
-          console.error("Error fetching chats:", error);
-        }
-      };
-
-      // Call the insertData function to insert the new chat message into the database
-      insertData();
-
-      // Reset the isSubmitted state
-      setIsSubmitted(false);
-
-      // Clear the chat message input field after the form is submitted
-      setChatMessage("");
-      document.getElementById("chatMessage").value = "";
-    }
-  }, [isSubmitted, userId, location, interest, chatMessage]);
-
-  /*
   Function: Scroll to the bottom of the messageOutput useEffect hook
   Description: useEffect hook to scroll the messageOutput textarea to the bottom when new messages are added, either by fetching or submitting new messages
   */
@@ -182,8 +200,9 @@ export default function Chat(props) {
   }, [messageOutput]);
 
   /*
-  Return: Chat component JSX
+  JSX
   */
+
   return (
     <div className={styles.chatContainer}>
       <section className={styles.chatSection}>
