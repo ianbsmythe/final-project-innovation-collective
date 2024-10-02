@@ -9,7 +9,7 @@ import styles from "./Chat.module.css";
 // Create a Supabase client for interacting with the Supabase database
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
 );
 
 /*
@@ -79,7 +79,7 @@ export default function Chat(props) {
         `*,
           profiles (
             display_name
-          )`
+          )`,
       );
       /* 
       .eq("location", "shire")
@@ -94,9 +94,9 @@ export default function Chat(props) {
           chats
             .map(
               (chat) =>
-                `${formatChatMessage(chat.profiles.display_name, chat.created_at, chat.chat_message)}`
+                `${formatChatMessage(chat.profiles.display_name, chat.created_at, chat.chat_message)}`,
             )
-            .join("\n\n")
+            .join("\n\n"),
         );
       }
     };
@@ -177,10 +177,10 @@ export default function Chat(props) {
             // Update the messageOutput state with the new chat message and the user's display_name
             setMessageOutput(
               (prevMessageOutput) =>
-                `${prevMessageOutput}\n\n${formatChatMessage(displayName, payload.new.created_at, payload.new.chat_message)}`
+                `${prevMessageOutput}\n\n${formatChatMessage(displayName, payload.new.created_at, payload.new.chat_message)}`,
             );
           }
-        }
+        },
       )
       .subscribe();
 
