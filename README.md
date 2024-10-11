@@ -147,14 +147,10 @@ I was part of the Front End and UX/UI teams, focusing on creating a user-friendl
 
 ## Contributors
 
-An amazing project made with mazing people:
+The Gatherly team contributors:
 
 - [@SuperFlyz81](https://github.com/SuperFlyz81)
 - [@danielleaop](https://github.com/danielleaop)
 - [@irene-1308](https://github.com/irene-1308)
 - [@BenMaharjan](https://github.com/BenMaharjan)
 - [@Plinks](https://github.com/Plinks)
-
-
-
-Replace the placeholders (`path/to/homepage-image.png`, `path/to/user-profile-image.png`, `path/to/chat-interface-image.png`, `path/to/video-thumbnail.png`, and `https://www.youtube.com/watch?v=your-video-link`) with the actual paths to your images and the link to your video tutorial.
