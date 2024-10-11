@@ -131,14 +131,15 @@ These are all still in ideation or under discussion.
 
 ### Images
 
-![Home Page](public/assets/images/Screenshot%202024-10-11%20125847.png)
-*Description of the home page.*
+![Home Page](public/assets/images/Screenshot%202024-10-11%20125929.png)
+![Home Page](public/assets/images/Screenshot%202024-10-11%20130109.png) 
+*The landing page to sign up/in for Gatherly.*
 
-![User Profile](path/to/user-profile-image.png)
-*Description of the user profile page.*
+![User Profile](public/assets/images/Screenshot%202024-10-11%20125904.png)
+*Profile page with photo, name, bio & interests*
 
-![Chat Interface](path/to/chat-interface-image.png)
-*Description of the chat interface.*
+![Chat Interface](public/assets/images/Screenshot%202024-10-11%20125847.png)
+*Interactive chat feature, rendering user input live.*
 
 ## My Involvement
 
