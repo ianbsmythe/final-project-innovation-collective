@@ -81,7 +81,7 @@ A socially responsible social app that fosters community by helping like-minded 
 
 ### MVP2
 
-- Search functionality for chat groups based on location and interests
+- Functionality for chat groups based on location and interests
 
 ### MVP3
 
@@ -90,14 +90,6 @@ A socially responsible social app that fosters community by helping like-minded 
   - https://www.npmjs.com/package/bad-words
   - https://www.npmjs.com/package/badwords-list
   - https://www.npmjs.com/package/obscenity
-
-### MVP4
-
-- Local meetups
-
-### MVP5
-
-- Direct Messages with other users
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#future-features-usps---unique-selling-propositions)
 
