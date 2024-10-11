@@ -1,16 +1,10 @@
-<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#gatherly)
-
-# ➤ Gatherly
+# Gatherly
 
 ### _“Connect Locally, Unite Globally”_
 
 A social app to make friends locally and meet up with like-minded people.
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#project-outline)
-
-## ➤ Project Outline
+## Project Outline
 
 ### Problem Statement
 
@@ -24,10 +18,7 @@ A socially responsible social app that fosters community by helping like-minded 
 
 - A mobile-first, responsive designed web application.
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#mvps)
-
-## ➤ MVPs
+## MVPs
 
 ### MVP0 (Pre-Launch Landing Page)
 
@@ -83,10 +74,7 @@ Just two pages to start with. A profile page and a group chat page. And somewher
 
 - Direct Messages with other users
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#future-features-usps---unique-selling-propositions)
-
-## ➤ Future Features (USPs - Unique Selling Propositions)
+## Future Features (USPs - Unique Selling Propositions)
 
 These are all still in ideation or under discussion.
 
@@ -99,10 +87,7 @@ These are all still in ideation or under discussion.
 - AI-powered profile picture verification.
 - AI-powered chat group and direct message moderation.
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#supporting-documentation)
-
-## ➤ Supporting Documentation
+## Supporting Documentation
 
 ### Live Website Link
 
