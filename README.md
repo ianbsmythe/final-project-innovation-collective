@@ -21,8 +21,6 @@ Gatherly is a social platform designed to help you connect with friends and meet
 - Running the Project Locally
 - My Involvement
 - Contributors
-- License
-- Contact
 
 ## ➤ Live Website
 
@@ -151,12 +149,20 @@ These are all still in ideation or under discussion.
 ![Chat Interface](path/to/chat-interface-image.png)
 *Description of the chat interface.*
 
-## ➤ Running the Project Locally
+## My Involvement
 
-To run the project locally, follow these steps:
+I was part of the Front End and UX/UI teams, focusing on creating a user-friendly interface and ensuring a seamless user experience.
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/SchoolOfCode/final-project-innovation-collective.git
-   ```
+## Contributors
 
+An amazing project made with mazing people:
+
+- [@SuperFlyz81](https://github.com/SuperFlyz81)
+- [@danielleaop](https://github.com/danielleaop)
+- [@irene-1308](https://github.com/irene-1308)
+- [@BenMaharjan](https://github.com/BenMaharjan)
+- [@Plinks](https://github.com/Plinks)
+
+
+
+Replace the placeholders (`path/to/homepage-image.png`, `path/to/user-profile-image.png`, `path/to/chat-interface-image.png`, `path/to/video-thumbnail.png`, and `https://www.youtube.com/watch?v=your-video-link`) with the actual paths to your images and the link to your video tutorial.
