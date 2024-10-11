@@ -131,7 +131,7 @@ These are all still in ideation or under discussion.
 
 ### Images
 
-![Home Page](/main/public/assets/images/Screenshot%202024-10-11%20125847.png)
+![Home Page](public/assets/images/Screenshot%202024-10-11%20125847.png)
 *Description of the home page.*
 
 ![User Profile](path/to/user-profile-image.png)
