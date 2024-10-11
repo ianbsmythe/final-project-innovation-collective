@@ -1,12 +1,40 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#gatherly)
 
-# ➤ Gatherly
+# <img src="public/assets/images/logo-black.jpg" alt="Gatherly Logo" width="50" height="50" align="left"> Gatherly
 
 ### _“Connect Locally, Unite Globally”_
 
-A social app to make friends locally and meet up with like-minded people.
+Gatherly is a social platform designed to help you connect with friends and meet new people based on shared interests and activities. This project was developed as part of the School of Code Bootcamp 17.
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#project-outline)
+
+## ➤ Table of Contents
+
+- Live Website
+- Final Presentation
+- GitHub Repository
+- Project Outline
+- Features
+- Supporting Documentation
+- How to Use Gatherly
+- Running the Project Locally
+- My Involvement
+- Contributors
+- License
+- Contact
+
+## ➤ Live Website
+
+- [Gatherly Live](https://gatherly-6tik.onrender.com/)
+
+## ➤ Final Presentation
+
+- [Gatherly Final Presentation](https://gamma.app/docs/Innovation-Collective-oox9d4mektcz3du) (as presented on School of Code Bootcamp 17's final project presentation day on Friday, 27 September 2024)
+
+## ➤ GitHub Repository
+
+- [GitHub Repo](https://github.com/SchoolOfCode/final-project-innovation-collective)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#project-outline)
 
@@ -14,16 +42,15 @@ A social app to make friends locally and meet up with like-minded people.
 
 ### Problem Statement
 
-Loneliness is more prolific in today’s society than ever before. Gen Z, Millenials, and elderly individuals report experiencing high levels of social isolation. Gen Z is said to be the loneliest generation of all time. 22% of Millennials say they have zero friends. And old age loneliness is the highest it's ever been. Existing social media platforms lack focus on building lasting and meaningful connections based on mutual interest and locality.
+Loneliness is more prolific in today’s society than ever before. Gen Z, Millennials, and elderly individuals report experiencing high levels of social isolation. Gen Z is said to be the loneliest generation of all time. 22% of Millennials say they have zero friends. And old age loneliness is the highest it's ever been. Existing social media platforms lack focus on building lasting and meaningful connections based on mutual interest and locality.
 
 ### Solution
 
-A socially responsible social app that fosters community by helping like-minded individuals find and connect with others within their locality based on shared interests, hobbies and activities. Our app would be aimed at building communities and life-long friendships, both remotely and in-person.
+A socially responsible social app that fosters community by helping like-minded individuals find and connect with others within their locality based on shared interests, hobbies, and activities. Our app would be aimed at building communities and life-long friendships, both remotely and in-person.
 
 ### Approach
 
 - A mobile-first, responsive designed web application.
-
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#mvps)
 
@@ -83,7 +110,6 @@ Just two pages to start with. A profile page and a group chat page. And somewher
 
 - Direct Messages with other users
 
-
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#future-features-usps---unique-selling-propositions)
 
 ## ➤ Future Features (USPs - Unique Selling Propositions)
@@ -99,33 +125,38 @@ These are all still in ideation or under discussion.
 - AI-powered profile picture verification.
 - AI-powered chat group and direct message moderation.
 
-
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#supporting-documentation)
 
 ## ➤ Supporting Documentation
 
-### Live Website Link
-
-- https://gatherly-6tik.onrender.com/
-
-### Final Presentation
-
-- Gatherly Final Presentation (as presented on School of Code Bootcamp 17's final project presentation day on Friday, 27 September 2024)
-  - https://gamma.app/docs/Innovation-Collective-oox9d4mektcz3du
-
-### GitHub Repo
-
-- GitHub Repo (this page)
-  - https://github.com/SchoolOfCode/final-project-innovation-collective
-
 ### Planning
 
-- Figma FigJam (Planning and Ideation)
-  - https://www.figma.com/board/d9VgoEVmAFsYkY8wTgquKX/Week-13-Planning?node-id=0-1&t=MwFXrHtjVazMh9wF-1
+- [Figma FigJam (Planning and Ideation)](https://www.figma.com/board/d9VgoEVmAFsYkY8wTgquKX/Week-13-Planning?node-id=0-1&t=MwFXrHtjVazMh9wF-1)
 
 ### Team Manifesto Documents
 
-- Team Manifesto Google Doc
-  - https://docs.google.com/document/d/1lQ_oJvjzh-zlh6_LrnnaTfCYVEizhvxElQyhaVS_zgk
-- Team Manifesto Gamma Presentation
-  - https://gamma.app/docs/Team-Manifesto-3cmt7t9votlqm6r?mode=doc
+- [Team Manifesto Google Doc](https://docs.google.com/document/d/1lQ_oJvjzh-zlh6_LrnnaTfCYVEizhvxElQyhaVS_zgk)
+- [Team Manifesto Gamma Presentation](https://gamma.app/docs/Team-Manifesto-3cmt7t9votlqm6r?mode=doc)
+
+## ➤ How to Use Gatherly
+
+### Images
+
+![Home Page](path/to/homepage-image.png)
+*Description of the home page.*
+
+![User Profile](path/to/user-profile-image.png)
+*Description of the user profile page.*
+
+![Chat Interface](path/to/chat-interface-image.png)
+*Description of the chat interface.*
+
+## ➤ Running the Project Locally
+
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/SchoolOfCode/final-project-innovation-collective.git
+   ```
+
