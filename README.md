@@ -54,17 +54,8 @@ A socially responsible social app that fosters community by helping like-minded 
 
 ## ➤ MVPs
 
-### MVP0 (Pre-Launch Landing Page)
-
-A landing page based on LearnWorlds press release guidelines (so Amazon press release). Possibly with an "are you interested" e-mail subscription form to gauge initial interest.
-
 ### MVP1
-
-Just two pages to start with. A profile page and a group chat page. And somewhere (a database) to store the profile and chat data.
-
-- #### Step 1 - Profile Page
-
-  - A profile page (based on session authentication initially) containing:
+  -   A profile page (based on session authentication initially) containing:
     - Profile picture placeholder (use the user's initials as a profile picture to start with)
     - Email address
     - Name
@@ -75,7 +66,7 @@ Just two pages to start with. A profile page and a group chat page. And somewher
     - Gender
     - Bio
     - Interests (should be able to add multiple interests)
-  - Database (for storing profiles, group chats, etc.) using a pre-built service like Supabase's Database service. Supabase databases come with their own auto-generated Data APIs, allowing you to easily create, read, update, and delete data in them. More info here.
+    - Database (for storing profiles, group chats, etc.) using a pre-built service like Supabase's Database service. Supabase databases come with their own auto-generated Data APIs, allowing you to easily create, read, update, and delete data in them. More info here.
     - https://supabase.com/docs/guides/database/overview
     - https://supabase.com/docs/guides/database/connecting-to-postgres
     - https://supabase.com/docs/guides/api
@@ -140,7 +131,7 @@ These are all still in ideation or under discussion.
 
 ### Images
 
-![Home Page](path/to/homepage-image.png)
+![Home Page](/main/public/assets/images/Screenshot%202024-10-11%20125847.png)
 *Description of the home page.*
 
 ![User Profile](path/to/user-profile-image.png)
